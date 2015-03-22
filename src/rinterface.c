@@ -4341,10 +4341,6 @@ SEXP R_igraph_get_shortest_paths(SEXP graph, SEXP pfrom, SEXP pto,
   if (inbound) { igraph_vector_long_init(&inboundvec, no); }
   
   if (pw && igraph_vector_min(pw) < 0){
-    /*
-    result = R_NilValue;
-    return result;
-    */
     igraph_get_shortest_paths_bellman_ford(&g, 
 					   verts ? &ptrvec : 0, 
 					   edges ? &ptrevec : 0,
